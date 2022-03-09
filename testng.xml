@@ -1,0 +1,33 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="TestSuite" parallel="tests">
+    <test name="tests.TestsFirefox" parallel="methods" thread-count="1">
+        <parameter name="browser" value="firefox"/>
+        <classes>
+            <class name="Tests">
+                <methods>
+                    <include name="checkSearchFieldOnHomePageNegative"/>
+                    <include name="checkSearchFieldOnHomePagePositive"/>
+                    <include name="checkEmptyCart"/>
+                    <include name="checkAddToCart"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="tests.TestsChrome" parallel="methods" thread-count="1">
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name="Tests">
+                <methods>
+                    <include name="checkSearchFieldOnHomePageNegative"/>
+                    <include name="checkSearchFieldOnHomePagePositive"/>
+                    <include name="checkEmptyCart"/>
+                    <include name="checkAddToCart"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+</suite>
